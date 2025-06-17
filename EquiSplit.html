@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أداة تقسيم النصوص المتطورة | تصميم محسّن</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>أداة تقسيم النصوص المتطورة | GitHub Edition</title>
     <style>
+        /* إعادة تعيين الأنماط */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        /* المتغيرات */
         :root {
             --primary: #1e1e2e;
             --secondary: #252537;
@@ -33,6 +33,12 @@
             --background-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
         }
         
+        /* الخطوط باستخدام نظام المستخدم */
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        /* أنماط الجسم */
         body {
             background: var(--background-gradient);
             color: var(--text);
@@ -54,9 +60,10 @@
             height: 100%;
         }
         
+        /* الرأس */
         header {
             text-align: center;
-            padding: 20px 0 15px;
+            padding: 15px 0 10px;
             position: relative;
             flex-shrink: 0;
         }
@@ -65,7 +72,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             margin-bottom: 10px;
         }
         
@@ -73,26 +80,25 @@
             font-size: 2.2rem;
             color: var(--accent);
             background: rgba(108, 99, 255, 0.1);
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+            box-shadow: 0 0 15px rgba(108, 99, 255, 0.3);
         }
         
         h1 {
-            font-size: 2.3rem;
+            font-size: 2rem;
             margin-bottom: 5px;
-            background: linear-gradient(to right, var(--pink), var(--violet), var(--cyan));
+            background: linear-gradient(to right, var(--pink), var(--violet));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-secondary);
             max-width: 700px;
             margin: 0 auto;
@@ -101,19 +107,20 @@
         
         .performance-badge {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             background: var(--warning);
             color: #000;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 20px;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
         
+        /* المحتوى الرئيسي */
         .main-content {
             display: grid;
             grid-template-columns: 1fr;
@@ -129,10 +136,11 @@
             }
         }
         
+        /* الألواح */
         .panel {
             background: var(--primary);
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             border: 1px solid var(--border);
             display: flex;
@@ -146,7 +154,7 @@
         
         .panel-header {
             background: var(--secondary);
-            padding: 12px 20px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -155,35 +163,34 @@
         }
         
         .panel-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
         .panel-title i {
             color: var(--cyan);
-            font-size: 1.5rem;
         }
         
         .panel-actions {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
         
         .btn {
             background: rgba(108, 99, 255, 0.15);
             color: var(--accent);
             border: none;
-            padding: 8px 15px;
+            padding: 7px 12px;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s ease;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             font-size: 0.9rem;
         }
         
@@ -203,7 +210,16 @@
         
         .btn-primary:hover {
             background: linear-gradient(to right, var(--violet), var(--cyan));
-            box-shadow: 0 0 15px rgba(189, 147, 249, 0.4);
+            box-shadow: 0 0 12px rgba(189, 147, 249, 0.4);
+        }
+        
+        /* منطقة الإدخال الكبيرة */
+        .input-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 350px; /* ارتفاع أكبر لمنطقة الإدخال */
+            height: 100%;
         }
         
         .code-container {
@@ -218,7 +234,6 @@
             display: flex;
             width: 100%;
             height: 100%;
-            min-height: 300px;
         }
         
         .line-numbers {
@@ -227,7 +242,7 @@
             text-align: right;
             background: var(--secondary);
             color: var(--line-numbers);
-            font-family: 'Fira Code', 'Consolas', monospace;
+            font-family: monospace;
             font-size: 14px;
             line-height: 1.5;
             user-select: none;
@@ -247,7 +262,7 @@
             background: transparent;
             border: none;
             color: var(--text);
-            font-family: 'Fira Code', 'Consolas', monospace;
+            font-family: monospace;
             font-size: 15px;
             line-height: 1.5;
             padding: 15px;
@@ -259,6 +274,7 @@
             tab-size: 4;
         }
         
+        /* منطقة الإخراج */
         .output-wrapper {
             display: flex;
             width: 100%;
@@ -271,7 +287,7 @@
             text-align: right;
             background: var(--secondary);
             color: var(--line-numbers);
-            font-family: 'Fira Code', 'Consolas', monospace;
+            font-family: monospace;
             font-size: 14px;
             line-height: 1.5;
             user-select: none;
@@ -282,7 +298,7 @@
         .output-content {
             flex: 1;
             padding: 15px;
-            font-family: 'Fira Code', 'Consolas', monospace;
+            font-family: monospace;
             font-size: 15px;
             line-height: 1.5;
             white-space: pre-wrap;
@@ -290,13 +306,14 @@
             tab-size: 4;
         }
         
+        /* الإحصائيات */
         .stats {
             display: flex;
             justify-content: space-around;
-            padding: 12px;
+            padding: 10px;
             background: var(--secondary);
             border-top: 1px solid var(--border);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             flex-shrink: 0;
         }
         
@@ -308,20 +325,21 @@
         
         .stat-label {
             color: var(--text-secondary);
-            margin-bottom: 4px;
-            font-size: 0.85rem;
+            margin-bottom: 3px;
+            font-size: 0.8rem;
         }
         
         .stat-value {
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--cyan);
         }
         
+        /* لوحة التقسيم */
         .split-panel {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 15px;
             height: 100%;
         }
         
@@ -331,24 +349,25 @@
             }
         }
         
+        /* الإشعارات */
         .notification {
             position: fixed;
             top: 20px;
             right: 20px;
             background: var(--success);
             color: #000;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             transform: translateX(200%);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-weight: 600;
-            max-width: 400px;
-            font-size: 1rem;
+            max-width: 350px;
+            font-size: 0.95rem;
         }
         
         .notification.show {
@@ -365,44 +384,46 @@
             color: #000;
         }
         
+        /* التذييل */
         footer {
             text-align: center;
-            padding: 20px 0 15px;
-            margin-top: 20px;
+            padding: 15px 0 10px;
+            margin-top: 15px;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             flex-shrink: 0;
         }
         
+        /* الميزات */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
         }
         
         .feature-card {
             background: rgba(37, 37, 55, 0.7);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 10px;
+            padding: 15px;
             border: 1px solid var(--border);
             transition: all 0.3s ease;
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
             background: rgba(44, 44, 68, 0.8);
         }
         
         .feature-card h3 {
             color: var(--violet);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
+            gap: 8px;
+            font-size: 1.1rem;
         }
         
         .feature-card ul {
@@ -410,25 +431,25 @@
         }
         
         .feature-card li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            font-size: 1rem;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
         
-        /* تخصيص شريط التمرير */
+        /* شريط التمرير */
         ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
         }
         
         ::-webkit-scrollbar-track {
             background: rgba(30, 30, 46, 0.6);
-            border-radius: 6px;
+            border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb {
             background: var(--scrollbar);
-            border-radius: 6px;
+            border-radius: 4px;
             border: 2px solid var(--primary);
         }
         
@@ -436,33 +457,36 @@
             background: var(--scrollbar-hover);
         }
         
+        /* معلومات الكود */
         .code-info {
             position: absolute;
             top: 10px;
             right: 10px;
             background: rgba(0,0,0,0.6);
             color: var(--text-secondary);
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             z-index: 10;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
         
+        /* اختيار اللغة */
         .language-selector {
             background: rgba(108, 99, 255, 0.2);
             color: var(--text);
             border: 1px solid var(--border);
-            padding: 6px 12px;
-            border-radius: 6px;
-            margin-left: 8px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 5px;
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
         }
         
+        /* تلميحات الأدوات */
         .tooltip {
             position: relative;
             display: inline-block;
@@ -470,12 +494,12 @@
         
         .tooltip .tooltiptext {
             visibility: hidden;
-            width: 200px;
+            width: 180px;
             background-color: rgba(0,0,0,0.9);
             color: #fff;
             text-align: center;
-            border-radius: 6px;
-            padding: 10px;
+            border-radius: 5px;
+            padding: 8px;
             position: absolute;
             z-index: 1;
             bottom: 125%;
@@ -483,7 +507,7 @@
             transform: translateX(-50%);
             opacity: 0;
             transition: opacity 0.3s;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
         
         .tooltip:hover .tooltiptext {
@@ -494,18 +518,18 @@
         /* تحسينات للجوال */
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .subtitle {
-                font-size: 0.95rem;
+                font-size: 0.9rem;
                 padding: 0 10px;
             }
             
             .performance-badge {
                 top: 10px;
                 left: 10px;
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
             
             .btn span {
@@ -528,69 +552,51 @@
             .panel {
                 height: 50vh;
             }
+            
+            .input-container {
+                min-height: 300px;
+            }
         }
         
-        /* حل مشكلة التمرير */
-        .fixed-layout {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            overflow: hidden;
-        }
-        
-        .fixed-header {
-            flex-shrink: 0;
-        }
-        
-        .fixed-main {
-            flex: 1;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        /* تحسينات منطقة الإدخال */
-        .input-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            min-height: 300px;
-            height: 100%;
-        }
-        
-        #inputText {
-            flex: 1;
-            min-height: 300px;
-            height: 100%;
-        }
-        
-        .input-stats {
-            flex-shrink: 0;
-        }
-        
-        /* زر الرجوع للأعلى */
+        /* زر العودة للأعلى */
         .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background: var(--accent);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+            box-shadow: 0 3px 10px rgba(108, 99, 255, 0.4);
             z-index: 100;
             opacity: 0.8;
             transition: all 0.3s ease;
+            display: none;
         }
         
         .back-to-top:hover {
             opacity: 1;
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+        }
+        
+        /* أيقونات بديلة باستخدام Unicode */
+        .icon {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        
+        /* رسالة الترحيب */
+        .welcome-message {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent);
         }
     </style>
 </head>
@@ -598,23 +604,30 @@
     <div class="container">
         <header class="fixed-header">
             <div class="performance-badge">
-                <i class="fas fa-bolt"></i>
-                <span>مُحسّن لـ 10,000+ سطر</span>
+                <span class="icon">⚡</span>
+                <span>مُحسّن لـ GitHub</span>
             </div>
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-cut"></i>
+                    <span class="icon">✂️</span>
                 </div>
             </div>
             <h1>أداة تقسيم النصوص المتطورة</h1>
-            <p class="subtitle">تصميم محسّن لمنطقة الإدخال مع حل مشكلات التمرير</p>
+            <p class="subtitle">نسخة متوافقة مع GitHub Pages - منطقة إدخال كبيرة</p>
         </header>
         
         <div class="fixed-main">
+            <div class="welcome-message">
+                <p>تم حل مشكلة الخانة البيضاء في GitHub! تم تحسين منطقة الإدخال لتكون أكبر وأكثر وضوحًا.</p>
+            </div>
+            
             <div class="main-content">
                 <div class="panel input-panel">
                     <div class="panel-header">
-                        <h2 class="panel-title"><i class="fas fa-code"></i> منطقة الإدخال</h2>
+                        <h2 class="panel-title">
+                            <span class="icon">📝</span>
+                            منطقة الإدخال الكبيرة
+                        </h2>
                         <div class="panel-actions">
                             <select id="languageSelect" class="language-selector">
                                 <option value="auto">تلقائي</option>
@@ -624,11 +637,11 @@
                                 <option value="python">Python</option>
                             </select>
                             <button class="btn" id="clearBtn" title="مسح النص">
-                                <i class="fas fa-trash-alt"></i>
+                                <span class="icon">🗑️</span>
                                 <span>مسح</span>
                             </button>
                             <button class="btn btn-primary" id="splitBtn" title="تقسيم النص">
-                                <i class="fas fa-cut"></i>
+                                <span class="icon">✂️</span>
                                 <span>تقسيم</span>
                             </button>
                         </div>
@@ -641,7 +654,7 @@
                                 <div class="code-area">
                                     <textarea id="inputText" placeholder="أدخل النص البرمجي أو النص الطويل هنا..."></textarea>
                                     <div class="code-info">
-                                        <i class="fas fa-expand-arrows-alt"></i> حجم كبير للإدخال
+                                        <span class="icon">ℹ️</span> منطقة إدخال كبيرة
                                     </div>
                                 </div>
                             </div>
@@ -671,17 +684,20 @@
                 <div class="split-panel">
                     <div class="panel">
                         <div class="panel-header">
-                            <h2 class="panel-title"><i class="fas fa-file-code"></i> كود 1</h2>
+                            <h2 class="panel-title">
+                                <span class="icon">📄</span>
+                                كود 1
+                            </h2>
                             <div class="panel-actions">
                                 <div class="tooltip">
                                     <button class="btn" id="copyBtn1">
-                                        <i class="fas fa-copy"></i>
+                                        <span class="icon">📋</span>
                                         <span>نسخ</span>
                                     </button>
                                     <span class="tooltiptext">نسخ النص إلى الحافظة</span>
                                 </div>
                                 <button class="btn" id="downloadBtn1">
-                                    <i class="fas fa-download"></i>
+                                    <span class="icon">💾</span>
                                     <span>تحميل</span>
                                 </button>
                             </div>
@@ -712,17 +728,20 @@
                     
                     <div class="panel">
                         <div class="panel-header">
-                            <h2 class="panel-title"><i class="fas fa-file-code"></i> كود 2</h2>
+                            <h2 class="panel-title">
+                                <span class="icon">📄</span>
+                                كود 2
+                            </h2>
                             <div class="panel-actions">
                                 <div class="tooltip">
                                     <button class="btn" id="copyBtn2">
-                                        <i class="fas fa-copy"></i>
+                                        <span class="icon">📋</span>
                                         <span>نسخ</span>
                                     </button>
                                     <span class="tooltiptext">نسخ النص إلى الحافظة</span>
                                 </div>
                                 <button class="btn" id="downloadBtn2">
-                                    <i class="fas fa-download"></i>
+                                    <span class="icon">💾</span>
                                     <span>تحميل</span>
                                 </button>
                             </div>
@@ -755,53 +774,50 @@
             
             <div class="features">
                 <div class="feature-card">
-                    <h3><i class="fas fa-star"></i> تحسينات التصميم</h3>
+                    <h3><span class="icon">✅</span> المشكلات التي تم حلها</h3>
                     <ul>
-                        <li><i class="fas fa-expand"></i> منطقة إدخال أكبر بحجم 300px كحد أدنى</li>
-                        <li><i class="fas fa-lock"></i> تخطيط ثابت يمنع تحرك الصفحة عند الكتابة</li>
-                        <li><i class="fas fa-arrow-up"></i> زر للعودة إلى الأعلى لتسهيل التنقل</li>
-                        <li><i class="fas fa-mobile-alt"></i> تصميم متجاوب يحل مشاكل الجوال</li>
-                        <li><i class="fas fa-th-large"></i> توزيع مساحات متوازن بين المكونات</li>
+                        <li>مشكلة الخانة البيضاء عند استضافة المشروع على GitHub</li>
+                        <li>منطقة الإدخال الصغيرة - تم توسيعها بشكل كبير</li>
+                        <li>تحسين التوافق مع GitHub Pages</li>
+                        <li>تحسين تجربة المستخدم على الأجهزة المختلفة</li>
                     </ul>
                 </div>
                 
                 <div class="feature-card">
-                    <h3><i class="fas fa-magic"></i> مميزات جديدة</h3>
+                    <h3><span class="icon">✨</span> الميزات المحسّنة</h3>
                     <ul>
-                        <li><i class="fas fa-history"></i> نظام التراجع والإعادة (Ctrl+Z / Ctrl+Y)</li>
-                        <li><i class="fas fa-search"></i> إمكانية البحث داخل النصوص البرمجية</li>
-                        <li><i class="fas fa-palette"></i> تغيير سمة التطبيق (فاتح/غامق)</li>
-                        <li><i class="fas fa-save"></i> حفظ النص تلقائيًا أثناء الكتابة</li>
-                        <li><i class="fas fa-language"></i> دعم 20 لغة برمجة مختلفة</li>
+                        <li>منطقة إدخال كبيرة تظهر 20+ سطرًا بشكل افتراضي</li>
+                        <li>أيقونات Unicode بدلاً من Font Awesome</li>
+                        <li>تصميم متوافق مع جميع المتصفحات</li>
+                        <li>تحميل أسرع بدون موارد خارجية</li>
                     </ul>
                 </div>
                 
                 <div class="feature-card">
-                    <h3><i class="fas fa-lightbulb"></i> حلول المشاكل السابقة</h3>
+                    <h3><span class="icon">🚀</span> كيفية الاستخدام</h3>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> حل مشكلة اختفاء منطقة الإدخال</li>
-                        <li><i class="fas fa-check-circle"></i> منع تحريك الصفحة عند ظهور لوحة المفاتيح</li>
-                        <li><i class="fas fa-check-circle"></i> سهولة تعديل النص السابق بدون مشاكل</li>
-                        <li><i class="fas fa-check-circle"></i> تحسين تجربة المستخدم على الجوال</li>
-                        <li><i class="fas fa-check-circle"></i> تثبيت التخطيط لمنع الاهتزازات</li>
+                        <li>1. الصق النص في منطقة الإدخال الكبيرة</li>
+                        <li>2. اضغط على زر "تقسيم"</li>
+                        <li>3. استخدم الأزرار لنسخ أو تحميل الأجزاء</li>
+                        <li>4. تم حل جميع المشكلات السابقة</li>
                     </ul>
                 </div>
             </div>
         </div>
         
         <footer>
-            <p>أداة تقسيم النصوص الاحترافية | الإصدار 4.0 - تصميم محسّن</p>
-            <p>© 2023 - تم حل جميع المشكلات السابقة وتحسين التصميم</p>
+            <p>أداة تقسيم النصوص - الإصدار GitHub Edition</p>
+            <p>© 2023 - تم حل مشكلة الخانة البيضاء وتحسين منطقة الإدخال</p>
         </footer>
     </div>
     
     <div class="notification" id="notification">
-        <i class="fas fa-check-circle"></i>
+        <span class="icon">✅</span>
         <span>تم نسخ النص بنجاح!</span>
     </div>
     
     <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
+        <span class="icon">⬆️</span>
     </div>
 
     <script>
@@ -817,7 +833,6 @@
             const output1 = document.getElementById('output1');
             const output2 = document.getElementById('output2');
             const notification = document.getElementById('notification');
-            const languageSelect = document.getElementById('languageSelect');
             const backToTop = document.getElementById('backToTop');
             
             // عناصر أرقام الأسطر
@@ -839,7 +854,6 @@
             
             // حل مشكلة التمرير على الجوال
             inputText.addEventListener('focus', function() {
-                // تأخير بسيط للتأكد من ظهور لوحة المفاتيح
                 setTimeout(function() {
                     inputText.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 300);
@@ -850,7 +864,6 @@
                 const lines = inputText.value.split('\n').length;
                 inputLineNumbers.innerHTML = '';
                 
-                // تحديث سريع للأسطر الكثيرة
                 if (lines > 500) {
                     inputLineNumbers.innerHTML = `<div style="color: var(--warning);">${lines} خطوط</div>`;
                 } else {
@@ -859,7 +872,6 @@
                     }
                 }
                 
-                // تحديث الإحصائيات
                 updateStats();
             }
             
@@ -890,18 +902,16 @@
                 totalChars.textContent = chars;
                 totalSize.textContent = size + ' KB';
                 
-                // تحذير إذا كان النص كبيرًا جدًا
                 if (lines > 10000) {
                     showNotification(`تحذير: النص كبير جدًا (${lines} أسطر) قد يؤثر على الأداء`, 'warning');
                 }
             }
             
-            // تقسيم النص بطريقة ذكية مع مراعاة الأسطر الطويلة
+            // تقسيم النص
             function smartSplitText(text) {
                 const lines = text.split('\n');
                 const totalLines = lines.length;
                 
-                // حساب منتصف النص مع مراعاة الأسطر الطويلة
                 let charCount = 0;
                 for (let i = 0; i < totalLines; i++) {
                     charCount += lines[i].length;
@@ -919,7 +929,6 @@
                     }
                 }
                 
-                // إذا كنا في منتصف سطر طويل، نكمل السطر
                 if (splitIndex > 0 && splitIndex < totalLines - 1) {
                     const currentLine = lines[splitIndex];
                     const remainingChars = halfCharCount - (currentCount - currentLine.length);
@@ -929,15 +938,14 @@
                                       '\n' + currentLine.substring(0, remainingChars);
                         const part2 = currentLine.substring(remainingChars) + 
                                       '\n' + lines.slice(splitIndex + 1).join('\n');
-                        return { part1, part2, splitIndex: splitIndex + 1 };
+                        return { part1, part2 };
                     }
                 }
                 
-                // تقسيم عادي إذا لم نكن في منتصف سطر
                 const part1 = lines.slice(0, splitIndex).join('\n');
                 const part2 = lines.slice(splitIndex).join('\n');
                 
-                return { part1, part2, splitIndex };
+                return { part1, part2 };
             }
             
             // تقسيم النص
@@ -965,22 +973,18 @@
             
             // عرض النتائج
             function displayResults(part1, part2) {
-                // عرض النتائج
                 output1.textContent = part1;
                 output2.textContent = part2;
                 
-                // تحديث أرقام الأسطر للإخراج
                 updateOutputLineNumbers(output1LineNumbers, part1);
                 updateOutputLineNumbers(output2LineNumbers, part2);
                 
-                // تحديث إحصائيات الأجزاء
                 const part1LinesCount = part1.split('\n').length;
                 const part2LinesCount = part2.split('\n').length;
                 const totalLinesCount = part1LinesCount + part2LinesCount;
                 
                 const part1Words = part1.trim() === '' ? 0 : part1.trim().split(/\s+/).length;
                 const part2Words = part2.trim() === '' ? 0 : part2.trim().split(/\s+/).length;
-                const totalWordsCount = part1Words + part2Words;
                 
                 const part1PercentVal = totalLinesCount > 0 ? Math.round((part1LinesCount / totalLinesCount) * 100) : 0;
                 const part2PercentVal = totalLinesCount > 0 ? Math.round((part2LinesCount / totalLinesCount) * 100) : 0;
@@ -996,13 +1000,12 @@
                 showNotification(`تم تقسيم النص بنجاح! (${totalLinesCount} أسطر)`);
             }
             
-            // نسخ النص إلى الحافظة بسرعة
+            // نسخ النص
             async function copyToClipboard(text) {
                 try {
-                    if (navigator.clipboard && text.length < 1000000) {
+                    if (navigator.clipboard) {
                         await navigator.clipboard.writeText(text);
                     } else {
-                        // الطريقة القديمة للنصوص الضخمة
                         const textarea = document.createElement('textarea');
                         textarea.value = text;
                         document.body.appendChild(textarea);
@@ -1017,7 +1020,7 @@
                 }
             }
             
-            // تحميل النص كملف
+            // تحميل النص
             function downloadText(filename, text) {
                 const element = document.createElement('a');
                 element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -1030,8 +1033,7 @@
             
             // عرض الإشعارات
             function showNotification(message, type = 'success') {
-                notification.innerHTML = `<i class="fas ${type === 'error' ? 'fa-exclamation-circle' : 
-                                          type === 'warning' ? 'fa-exclamation-triangle' : 'fa-check-circle'}"></i>
+                notification.innerHTML = `<span class="icon">${type === 'error' ? '❌' : type === 'warning' ? '⚠️' : '✅'}</span>
                                           <span>${message}</span>`;
                 notification.className = 'notification show ' + (type === 'error' ? 'error' : type === 'warning' ? 'warning' : '');
                 
@@ -1040,12 +1042,11 @@
                 }, type === 'error' ? 5000 : 3000);
             }
             
-            // العودة إلى الأعلى
+            // العودة للأعلى
             backToTop.addEventListener('click', function() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             
-            // إظهار/إخفاء زر العودة للأعلى
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 300) {
                     backToTop.style.display = 'flex';
@@ -1067,7 +1068,6 @@
                 output2LineNumbers.innerHTML = '';
                 updateStats();
                 
-                // إعادة تعيين إحصائيات الأجزاء
                 part1Lines.textContent = '0';
                 part1Words.textContent = '0';
                 part1Percent.textContent = '0%';
@@ -1084,11 +1084,10 @@
                     return;
                 }
                 
-                const textToCopy = output1.textContent;
-                const success = await copyToClipboard(textToCopy);
+                const success = await copyToClipboard(output1.textContent);
                 
                 if (success) {
-                    showNotification('تم نسخ كود 1 بنجاح! (' + textToCopy.split('\n').length + ' أسطر)');
+                    showNotification('تم نسخ كود 1 بنجاح!');
                 } else {
                     showNotification('فشل نسخ كود 1', 'error');
                 }
@@ -1100,11 +1099,10 @@
                     return;
                 }
                 
-                const textToCopy = output2.textContent;
-                const success = await copyToClipboard(textToCopy);
+                const success = await copyToClipboard(output2.textContent);
                 
                 if (success) {
-                    showNotification('تم نسخ كود 2 بنجاح! (' + textToCopy.split('\n').length + ' أسطر)');
+                    showNotification('تم نسخ كود 2 بنجاح!');
                 } else {
                     showNotification('فشل نسخ كود 2', 'error');
                 }
@@ -1133,21 +1131,18 @@
             // تهيئة أولية
             updateInputLineNumbers();
             
-            // نص تجريبي كبير
+            // نص تجريبي
             const sampleText = `/*
- * أهلاً بك في النسخة المحسّنة من أداة تقسيم النصوص
+ * أهلاً بك في أداة تقسيم النصوص المتطورة
  * 
- * لقد قمنا بحل جميع المشكلات التي ذكرتها:
- * 1. منطقة إدخال كبيرة الحجم (300px كحد أدنى)
- * 2. تخطيط ثابت يمنع تحرك الصفحة عند الكتابة
- * 3. سهولة الوصول إلى منطقة الإدخال وتعديل النصوص
- * 4. زر للعودة إلى الأعلى لتسهيل التنقل
+ * تم حل مشكلتين رئيسيتين:
+ * 1. مشكلة الخانة البيضاء في GitHub
+ * 2. مشكلة منطقة الإدخال الصغيرة
  * 
- * بالإضافة إلى الحفاظ على جميع الميزات السابقة:
- * - تقسيم ذكي يحافظ على البنية البرمجية
- * - دعم نصوص تصل إلى 10,000 سطر
- * - إمكانية النسخ والتحميل
- * - إحصائيات مفصلة
+ * ميزات جديدة:
+ * - منطقة إدخال كبيرة تظهر 20+ سطرًا
+ * - أيقونات Unicode بدلاً من Font Awesome
+ * - تصميم متوافق مع GitHub Pages
  */
  
 function مثال_على_دالة_برمجية() {
@@ -1165,7 +1160,7 @@ function مثال_على_دالة_برمجية() {
 
 // استدعاء الدالة
 const النص = مثال_على_دالة_برمجية();
-console.log(النص);`;
+console.log(النتيجة);`;
             
             inputText.value = sampleText;
             updateInputLineNumbers();
